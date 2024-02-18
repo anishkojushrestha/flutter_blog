@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnBoardSecond extends StatelessWidget {
   const OnBoardSecond({
@@ -11,16 +12,16 @@ class OnBoardSecond extends StatelessWidget {
       children: [
         Image.asset(
           "assets/images/board2.png",
-          height: 333,
-          width: 333,
+          height: 333.h,
+          width: 333.w,
         ),
-        const SizedBox(
-          height: 50,
+        SizedBox(
+          height: 50.h,
         ),
-        const Text(
+        Text(
             "Customerize your reading experince and join the conversation by creating account.",
             style: TextStyle(
-              fontSize: 15,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
             ),
             textAlign: TextAlign.center),

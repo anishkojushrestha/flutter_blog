@@ -1,9 +1,12 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:blog/config/constants/my_assets.dart';
 import 'package:blog/config/constants/my_colors.dart';
+import 'package:blog/features/blog/presentation/router/router_import.gr.dart';
 import 'package:blog/features/blog/presentation/screens/onboard/widgets/onboard_view_model.dart';
 import 'package:blog/features/blog/presentation/screens/onboard/widgets/onboardsecond.dart';
 import 'package:blog/features/blog/presentation/screens/onboard/widgets/onboardthird.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -32,9 +35,9 @@ class _OnBoardState extends State<OnBoard> {
                 Row(
                   children: [
                     Image.asset(
-                      "assets/icons/blog.png",
-                      height: 52,
-                      width: 152,
+                      MyAssets.AppLogo,
+                      height: 52.h,
+                      width: 152.w,
                     ),
                     const Text(
                       "BLOG",
@@ -45,8 +48,8 @@ class _OnBoardState extends State<OnBoard> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 63,
+                SizedBox(
+                  height: 63.h,
                 ),
                 PageView(
                   controller: onBoardViewModel.pageController,
@@ -57,8 +60,8 @@ class _OnBoardState extends State<OnBoard> {
                   ],
                 ).expand(),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
+                  onPressed: () => AutoRouter.of(context).push(AuthRoute()),
+                  child: const Text(
                     "Get Started",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
@@ -66,12 +69,12 @@ class _OnBoardState extends State<OnBoard> {
                     backgroundColor: MyColors.primaryColor,
                     minimumSize: Size(MediaQuery.of(context).size.width, 44),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(11),
+                      borderRadius: BorderRadius.circular(11.r),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 41,
+                SizedBox(
+                  height: 41.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,8 +105,8 @@ class _OnBoardState extends State<OnBoard> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 15.h,
                 )
               ],
             ),

@@ -29,7 +29,7 @@ class _SplashState extends State<Splash> {
       body: Center(
           child: FadedScaleAnimation(
         child: Image.asset(
-          "assets/icons/blog.png",
+          MyAssets.AppLogo,
           height: 150,
           width: 339,
         ),

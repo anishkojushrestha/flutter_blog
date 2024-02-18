@@ -1,4 +1,4 @@
 class MyStrings {
-  MyStrings();
-  static const AppName = 'Blogs';
+  MyStrings._();
+  static const String AppName = 'Blogs';
 }

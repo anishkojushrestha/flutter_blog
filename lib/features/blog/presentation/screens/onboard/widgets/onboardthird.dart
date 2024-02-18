@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnBoardThird extends StatelessWidget {
   const OnBoardThird({
@@ -11,16 +12,16 @@ class OnBoardThird extends StatelessWidget {
       children: [
         Image.asset(
           "assets/images/board3.png",
-          height: 333,
-          width: 333,
+          height: 333.h,
+          width: 333.w,
         ),
-        const SizedBox(
-          height: 50,
+        SizedBox(
+          height: 50.h,
         ),
-        const Text(
+        Text(
             "Explore a wide selection of categories, or user the search bar to find specific topics.",
             style: TextStyle(
-              fontSize: 15,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500,
             ),
             textAlign: TextAlign.center),
