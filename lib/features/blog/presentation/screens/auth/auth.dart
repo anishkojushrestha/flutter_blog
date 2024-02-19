@@ -12,9 +12,12 @@ class _AuthState extends State<Auth> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 100,
+      width: 100,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/icons/auth_bg.png"),
+          image: AssetImage(MyAssets.authBg),
+          fit: BoxFit.cover,
         ),
       ),
       child: Scaffold(
@@ -22,6 +25,9 @@ class _AuthState extends State<Auth> {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
+              SizedBox(
+                height: 30.h,
+              ),
               Row(
                 children: [
                   Image.asset(
@@ -50,40 +56,51 @@ class _AuthState extends State<Auth> {
               SizedBox(
                 height: 12.h,
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text(
-                  "Login",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: MyColors.primaryColor,
-                  minimumSize: Size(MediaQuery.of(context).size.width, 44),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(11.r),
-                  ),
-                ),
+              PrimaryButton(
+                title: "Login",
+                onPressed: () => AutoRouter.of(context).push(LoginRoute()),
               ),
               SizedBox(
                 height: 12.h,
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text(
-                  "Register",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  minimumSize: Size(MediaQuery.of(context).size.width, 44),
-                  shape: RoundedRectangleBorder(
-                    side: const BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(11.r),
-                  ),
-                ),
+              OutlineButton(
+                title: "Register",
+                onPressed: () => AutoRouter.of(context).push(RegisterRoute()),
+              ),
+              SizedBox(
+                height: 12.h,
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class OutlinButton extends StatelessWidget {
+  const OutlinButton({
+    super.key,
+    required this.title,
+    required this.onPressed,
+  });
+  final String title;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Text(
+        title,
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+      ),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.transparent,
+        minimumSize: Size(MediaQuery.of(context).size.width, 44),
+        shape: RoundedRectangleBorder(
+          side: const BorderSide(color: Colors.white),
+          borderRadius: BorderRadius.circular(11.r),
         ),
       ),
     );
