@@ -45,12 +45,16 @@ class _HomeState extends State<Home> {
             itemBuilder: ((context, index) {
               return Row(
                 children: [
-                  Image.asset(
-                    "assets/images/board1.png",
-                    height: 160,
-                    width: 200,
-                    fit: BoxFit.cover,
-                  ).cornerRadius(20),
+                  GestureDetector(
+                    onTap: () =>
+                        AutoRouter.of(context).push(HomeDetailsRoute()),
+                    child: Image.asset(
+                      "assets/images/board1.png",
+                      height: 160,
+                      width: 200,
+                      fit: BoxFit.cover,
+                    ).cornerRadius(20),
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

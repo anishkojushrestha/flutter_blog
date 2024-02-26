@@ -31,7 +31,7 @@ class _GeneralState extends State<General> {
       // title: 'profile',
     ),
   ];
-  int visit = 1;
+  int visit = 0;
   List<Widget> pages = [
     const Home(),
     const Catagories(),
@@ -46,7 +46,7 @@ class _GeneralState extends State<General> {
       bottomNavigationBar: BottomBarCreative(
         items: items,
         backgroundSelected: Colors.white,
-        backgroundColor: Colors.green.withOpacity(0.21),
+        backgroundColor: Colors.white,
         color: MyColors.primaryColor.withOpacity(0.3),
         colorSelected: MyColors.primaryColor,
         indexSelected: visit,

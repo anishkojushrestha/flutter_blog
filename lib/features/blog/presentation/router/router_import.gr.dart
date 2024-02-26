@@ -67,6 +67,12 @@ abstract class $AppRouter extends _i12.RootStackRouter {
         child: const _i5.Home(),
       );
     },
+    HomeDetailsRoute.name: (routeData) {
+      return _i12.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i5.HomeDetails(),
+      );
+    },
     LoginRoute.name: (routeData) {
       return _i12.AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -172,6 +178,20 @@ class HomeRoute extends _i12.PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i5.HomeDetails]
+class HomeDetailsRoute extends _i12.PageRouteInfo<void> {
+  const HomeDetailsRoute({List<_i12.PageRouteInfo>? children})
+      : super(
+          HomeDetailsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeDetailsRoute';
 
   static const _i12.PageInfo<void> page = _i12.PageInfo<void>(name);
 }
