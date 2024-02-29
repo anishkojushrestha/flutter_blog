@@ -92,8 +92,8 @@ class _ProfileState extends State<Profile> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 20,
-                        mainAxisSpacing: 25,
-                        childAspectRatio: 0.9),
+                        mainAxisSpacing: 13,
+                        childAspectRatio: 0.7),
                     itemBuilder: (context, Index) {
                       return Column(
                         children: [
@@ -105,6 +105,7 @@ class _ProfileState extends State<Profile> {
                             children: [
                               "netflix will change money for password sharing"
                                   .text
+                                  .medium
                                   .make()
                                   .expand(),
                               Icon(FeatherIcons.moreVertical),

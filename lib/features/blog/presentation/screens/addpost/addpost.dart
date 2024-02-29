@@ -9,11 +9,102 @@ class Addpost extends StatefulWidget {
 }
 
 class _AddpostState extends State<Addpost> {
+  QuillController _controller = QuillController.basic();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: "This is addpost screen".text.make(),
+      appBar: AppBar(
+        title: "Add Post".text.make(),
+        automaticallyImplyLeading: false,
+        backgroundColor: MyColors.primaryColor,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(FeatherIcons.check),
+          ),
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        children: [
+          20.heightBox,
+          Stack(
+            alignment: Alignment.bottomRight,
+            children: [
+              Image.network(
+                  "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(FeatherIcons.camera),
+                color: MyColors.primaryColor,
+              )
+            ],
+          ),
+          20.heightBox,
+          const VxTextField(
+            fillColor: Colors.transparent,
+            borderColor: MyColors.primaryColor,
+            borderType: VxTextFieldBorderType.roundLine,
+            borderRadius: 10,
+            hint: "Title",
+          ),
+          20.heightBox,
+          const VxTextField(
+            fillColor: Colors.transparent,
+            borderColor: MyColors.primaryColor,
+            borderType: VxTextFieldBorderType.roundLine,
+            borderRadius: 10,
+            hint: "Slug",
+          ),
+          20.heightBox,
+          Container(
+            height: 60,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(10)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                "Catagories".text.make(),
+                const Icon(FeatherIcons.chevronRight)
+              ],
+            ),
+          ),
+          20.heightBox,
+          Container(
+            height: 60,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(10)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                "Catagories".text.make(),
+                const Icon(FeatherIcons.chevronRight)
+              ],
+            ),
+          ),
+          20.heightBox,
+          QuillToolbar.simple(
+            configurations: QuillSimpleToolbarConfigurations(
+              controller: _controller,
+              sharedConfigurations: const QuillSharedConfigurations(
+                locale: Locale('de'),
+              ),
+            ),
+          ),
+          Expanded(
+            child: QuillEditor.basic(
+              configurations: QuillEditorConfigurations(
+                controller: _controller,
+                readOnly: false,
+                sharedConfigurations: const QuillSharedConfigurations(
+                  locale: Locale('de'),
+                ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
