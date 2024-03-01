@@ -85,25 +85,6 @@ class _AddpostState extends State<Addpost> {
             ),
           ),
           20.heightBox,
-          QuillToolbar.simple(
-            configurations: QuillSimpleToolbarConfigurations(
-              controller: _controller,
-              sharedConfigurations: const QuillSharedConfigurations(
-                locale: Locale('de'),
-              ),
-            ),
-          ),
-          Expanded(
-            child: QuillEditor.basic(
-              configurations: QuillEditorConfigurations(
-                controller: _controller,
-                readOnly: false,
-                sharedConfigurations: const QuillSharedConfigurations(
-                  locale: Locale('de'),
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );

@@ -1,10 +1,20 @@
 import 'package:blog/config/themes/app_themes.dart';
+import 'package:blog/features/blog/data/repositories/repository.dart';
+import 'package:blog/features/blog/data/repositories/tags_repo.dart';
 import 'package:blog/features/blog/presentation/router/router_import.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    RepositoryProvider(
+      create: (context) => Repository(
+        tagsRepo: TagsRepo(),
+      ),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

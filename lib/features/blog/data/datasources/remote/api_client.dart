@@ -26,8 +26,7 @@ class ApiClient {
     try {
       // 404
       var response = await dio.get(path);
-      debugPrint(response.statusCode.toString());
-      debugPrint(response.data);
+
       return response;
     } on DioException catch (e) {
       if (e.response != null) {
