@@ -1,4 +1,5 @@
 import 'package:blog/config/themes/app_themes.dart';
+import 'package:blog/features/blog/data/repositories/auth_repo.dart';
 import 'package:blog/features/blog/data/repositories/repository.dart';
 import 'package:blog/features/blog/data/repositories/tags_repo.dart';
 import 'package:blog/features/blog/presentation/router/router_import.dart';
@@ -9,9 +10,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() {
   runApp(
     RepositoryProvider(
-      create: (context) => Repository(
-        tagsRepo: TagsRepo(),
-      ),
+      create: (context) =>
+          Repository(tagsRepo: TagsRepo(), authRepo: AuthRepo()),
       child: MyApp(),
     ),
   );
